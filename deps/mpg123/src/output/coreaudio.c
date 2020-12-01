@@ -78,7 +78,8 @@ static OSStatus playProc(AudioConverterRef inAudioConverter,
 		/* Only play if we have data left */
 		if ( sfifo_used( &ca->fifo ) < (int)wanted ) {
 			if(!ca->decode_done) {
-				warning("Didn't have any audio data in callback (buffer underflow)");
+				// I'm using this in an ink app, no idea why this is getting called, but the logging is stuttering the app
+				// warning("Didn't have any audio data in callback (buffer underflow)");
 				return -1;
 			}
 			wanted = sfifo_used( &ca->fifo );
