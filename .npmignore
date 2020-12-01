@@ -1,0 +1,9 @@
+.npmignore
+/build/
+/node_modules/
+/package-lock.json
+/yarn.lock
+
+# dev files
+/?.js
+/*.mp3
